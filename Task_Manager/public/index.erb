@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task Manager</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .task {
+      background-color: #f9f9f9;
+      border-radius: 5px;
+      margin-bottom: 10px;
+      padding: 10px;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    }
+
+    form {
+      margin-top: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    input[type="text"] {
+      width: 200px;
+      padding: 5px;
+    }
+
+    button {
+      padding: 5px 10px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Welcome to Task Manager App!</h1>
+
+    <h2>Tasks:</h2>
+    <ul>
+      <% settings.tasks.each do |task| %>
+        <li class="task"><%= task.description %></li>
+      <% end %>
+    </ul>
+
+    <form action="/add_task" method="post">
+      <label for="description">Add Task:</label>
+      <input type="text" id="description" name="description" required>
+      <button type="submit">Add</button>
+    </form>
+  </div>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task Manager</title>
+</head>
+<body>
+  <h1>Welcome to Task Manager App!</h1>
+
+  <h2>Tasks:</h2>
+  <ul>
+    <% settings.tasks.each do |task| %>
+      <li><%= task.description %></li>
+    <% end %>
+  </ul>
+
+  <form action="/add_task" method="post">
+    <label for="description">Add Task:</label>
+    <input type="text" id="description" name="description" required>
+    <button type="submit">Add</button>
+  </form>
+</body>
+</html>

@@ -1,0 +1,2 @@
+Example task 1,false
+Example task 2,true
